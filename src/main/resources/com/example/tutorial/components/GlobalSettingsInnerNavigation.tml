@@ -1,0 +1,14 @@
+<t:container
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+	<ul class="breadcrumb">
+		<li style="margin-right: 20px;${getStyle('Global')}"><t:PageLink
+				t:page="admin/view/EditGlobalSettings">Global</t:PageLink></li>
+		<li style="margin-right: 20px;${getStyle('Terms')}"><t:PageLink
+				t:page="admin/view/EditTermsGlobalSettings">Terms</t:PageLink></li>
+		<li style="margin-right: 20px;${getStyle('Help')}"><t:PageLink
+				t:page="admin/view/EditHelpGlobalSettings">Help</t:PageLink></li>
+		<li style="margin-right: 20px;${getStyle('HomePage')}"><t:PageLink
+				t:page="admin/view/EditHomePage">HomePage</t:PageLink></li>
+	</ul>
+</t:container>

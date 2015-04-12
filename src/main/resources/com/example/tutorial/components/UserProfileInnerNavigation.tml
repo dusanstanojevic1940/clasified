@@ -1,0 +1,16 @@
+<t:container
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<ul class="nav" id="yw0">
+				<li class="${getClass('profile')}"><t:PageLink
+						t:page="user/MyProfile">
+						<i class="icon-user icon-white"></i> ${message:myprofile}</t:PageLink></li>
+				<li class="${getClass('edit')}"><t:PageLink
+						t:page="user/MyProfileEdit">
+						<i class="icon-edit icon-white"></i> ${message:myprofileedit}</t:PageLink></li>
+			</ul>
+		</div>
+	</div>
+</t:container>
