@@ -1,8 +1,0 @@
-<html t:type="layout" title="Admin Main"
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
-
-<t:AdminInnerNavigation t:selected="${'admin'}"></t:AdminInnerNavigation>
-
-<h2>Welcome! You are an admin.</h2>
-<pre>Feel free to change anything</pre>
-</html>

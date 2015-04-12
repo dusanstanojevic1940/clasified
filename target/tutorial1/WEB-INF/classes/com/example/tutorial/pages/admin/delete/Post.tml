@@ -1,9 +1,0 @@
-<html t:type="layout" title="Admin Category"
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
-
-Are you sure you want to delete post with id ${id}?
-<br/>
-<br/>
-<t:actionlink t:id="yes" class='btn'>Yes</t:actionlink>
-<t:PageLink t:page="admin/view/Posts" class='btn'>No</t:PageLink>
-</html>
