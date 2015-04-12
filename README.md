@@ -26,9 +26,9 @@ Admin takodje moze da bira koje je sve podatke moguce dodati prilikom ubacivanja
 
 #Dodatne Opcije
 
--Reklame pamte IP adresu osobe koja ih je dodala.
--Reklame mogu da imaju slike.
--Reklame mogu da imaju video klipove.
+-Reklame pamte IP adresu osobe koja ih je dodala./n
+-Reklame mogu da imaju slike./n
+-Reklame mogu da imaju video klipove./n
 -Korisnici mogu da edituju profil
 -Korisnici mogu da Bump-uju svoju reklamu na vrh liste
 -Korisnici mogu da plate za dodatne opcije reklama (TopAd i FeaturedAd)
