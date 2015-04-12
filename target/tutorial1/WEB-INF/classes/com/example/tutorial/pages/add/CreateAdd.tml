@@ -1,0 +1,112 @@
+<html t:type="Layout" t:title="Post Ad" t:id="layout"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter" xmlns:j="tapestry-library:jquery">
+<ul class="breadcrumb">
+	<li><a t:type="PageLink" t:page="Index">${message:index}</a><span
+		class="divider">/</span></li>
+	<li><a t:type="PageLink" t:page="add/ChooseCategory">${message:choosecat}</a> <span
+		class="divider">/</span></li>
+	<li>${subcategory.name}</li>
+</ul>
+
+
+<form t:type="form" t:id="postForm" enctype="multipart/form-data"
+	onsubmit="return validateInput();" data-ajax="false" id="infoForm"
+	 method="post">
+	<input type="hidden" name="Info[category_id]" value="17" />
+	<table class='table table-striped table-bordered'>
+		<tr>
+			<th style='width: 90px;'><label for="Info_title"
+				class="required">${message:title} <span class="required">*</span></label></th>
+			<td>
+				<div>
+					<input t:type="textfield" t:id="title"
+						style="width: 98%; padding: 4px" placeholder="标题"
+						maxlength="120" name="Info[title]" id="Info_title" type="text" />
+				</div>
+			</td>
+		</tr>
+
+		<t:If t:test="${offeringWanted}">
+			<tr>
+				<th><label for="Info_type">Type</label></th>
+				<td><select t:type="Select" t:model="validKinds"
+					t:id="selectedKind" name="Info[type]" id="Info_type">
+				</select></td>
+			</tr>
+		</t:If>
+
+		<tr>
+			<th><label for="Info_content" class="required">${message:content} <span
+					class="required">*</span></label></th>
+			<td><textarea t:type="TextArea" t:mixins="TinyMCE"
+					t:id="content" id="wysiwyg" style="height: 430px; width: 100%"
+					name="Info[content]"></textarea></td>
+		</tr>
+
+		<t:If t:test="${showImageUpdload}">
+
+			<th>${message:imageup}</th>
+			<td><j:ajaxUpload t:id="uploadImage" t:multiple="false"
+					t:allowedExtensions="[jpg, png]" t:sizeLimit="5M">
+					<noscript>
+						<p>JavaScript must be activated!</p>
+					</noscript>
+				</j:ajaxUpload></td>
+
+
+		</t:If>
+		<tr>
+			<th><label for="Info_price">${message:price}</label></th>
+			<td><input t:type="textfield" t:id="price" placeholder="价格"
+				name="Info[price]" id="Info_price" type="text" /></td>
+		</tr>
+
+
+
+		<t:If t:test="${showLocation}">
+			<tr>
+				<th><label for="Info_area_id">Location</label></th>
+				<td><input t:type="textfield" t:id="locationName"
+					name="Info[area_id]" id="Info_area_id" /></td>
+			</tr>
+		</t:If>
+		<tr>
+			<th><label for="Info_phone">${message:phone}</label></th>
+			<td><input t:type="textfield" t:id="phone" size="20"
+				maxlength="20" placeholder="电话" name="Info[phone]"
+				id="Info_phone" type="text" /></td>
+		</tr>
+
+		<t:If t:test="videoOnPost">
+			<tr>
+				<th><label for="Info_area_id">${message:youtubevid}</label></th>
+				<td><input t:type="textfield" t:id="videoLink"
+					name="Info[area_id]" id="Info_area_id" /></td>
+			</tr>
+		</t:If>
+
+
+		<t:If t:test="showCaptcha">
+			<tr>
+				<th><label t:type="label" t:for="fcaptcha">Enter text
+						displayed below</label></th>
+				<td><t:kaptchafield t:visible="true" image="kaptcha" t:id="fcaptcha" /> <br />
+					<t:kaptchaimage t:id="kaptcha" style="float:left; margin-top:5px;" />
+				</td>
+			</tr>
+		</t:If>
+
+		<tr>
+			<th></th>
+			<td>
+				<div data-role="controlgroup" data-type="horizontal">
+					<input type='submit' value='${message:submit}'
+						class='btn btn-primary btn-large' />
+				</div>
+			</td>
+		</tr>
+	</table>
+</form>
+
+</html>

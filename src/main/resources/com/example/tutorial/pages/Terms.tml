@@ -1,0 +1,15 @@
+<html t:type="Layout" t:title="Terms" t:id="layout"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+<h1>${title}</h1>
+<h3>${subtitle}</h3>
+<t:OutputRaw t:value="${warnning}" />
+
+<t:OutputRaw t:value="${facts}" />
+
+<h3>${liability}</h3>
+
+<t:OutputRaw t:value="${liabilityFacts}" />
+
+</html>

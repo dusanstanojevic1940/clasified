@@ -1,0 +1,114 @@
+<html t:type="Layout" t:title="${subcategory.name}" t:id="layout"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+<!-- <ul class="breadcrumb" style='display: none'>
+	<li><a href="/">ADS711</a> <span class="divider">/</span></li>
+	<li>${subcategory.name}</li>
+</ul> -->
+
+<div class="navbar">
+	<div class="navbar-inner" style='padding: 0 10px !important'>
+
+		<a t:type="PageLink" t:page="view/Subcategory" class="brand" style=""><i
+			class='icon-star'></i>${subcategory.name}</a> <a t:type="PageLink"
+			t:page="add/CreateAdd" t:context="subcategory.id"
+			class="btn btn-success"><i class='icon-edit'></i> ${message:createad}</a>
+
+		<form class='navbar-search pull-right'>
+			<input type='text' name='search' style='width: 140px; margin: 0; margin-right: 7px;'
+				value='' /> <input type='submit' value='${message:submit}' class='btn'
+				style='margin: 0' />
+		</form>
+		
+	</div>
+</div>
+
+<t:If t:test="offeringWanted">
+	<div class='well' style='padding: 0 8px; margin: 5px 0;' id='filterDiv'>
+		<div style='padding: 10px 0px; border-bottom: 1px dashed #ddd'>
+			<i class='icon-random icon-large'></i> <a t:type="ActionLink"
+				t:id="offering" class="filterLink ">Offering</a> <a
+				t:type="ActionLink" t:id="wanted" class="filterLink ">Wanted</a>
+		</div>
+	</div>
+</t:If>
+
+<div t:type="Loop" t:source="postsToShow" value="currentPost" class='listCell' style="${getBackgroundStyle(currentPost.post_id)}; border-radius:5px;">
+	<table style='margin: 0; width: 100%'>
+		<tr>
+			<td style='width: 65px; margin-left:3px; padding-right: 10px;'>
+			<a  t:type="PageLink" t:page="view/Post"
+							context="currentPost.post_id" target="_blank"><img
+					style="height: 60px; width: 60px; margin-left:5px;" class="img-rounded"
+					src="${getPostsImage()}"
+					alt="" /></a></td>
+			<td style="margin-right:4px;">
+				<table class='attributes'>
+					<tr>
+						<td colspan='3'><a t:type="PageLink" t:page="view/Post"
+							context="currentPost.post_id" target="_blank" class="title">
+							<t:If t:test="${getIsTopAdToday(currentPost.post_id)}"> 
+								<i class="icon-thumbs-up" style="color:#c00;font-size:130%" />
+							</t:If>
+							<t:If t:test="${getIsFeaturedAdToday(currentPost.post_id)}"> 
+								<i class="icon-thumbs-up" style="color:#c00;font-size:130%" />
+							</t:If>
+							
+							${currentPost.title}&nbsp;&nbsp;<label class='label label-important'><b>$</b>${currentPost.price}</label></a></td>
+					</tr>
+					<tr>
+						<td style='width: 50%'><i class="icon-calendar icon-small"></i>
+							${timeSincePosted}</td>
+						
+						<t:If t:test="${!getIsFeaturedAdToday(currentPost.post_id)}">
+							<td style='width: 50%;'><i class="icon-phone-sign icon-small"></i>
+								&nbsp;${currentPost.phoneForContact}
+							</td>
+						</t:If>
+						<t:If t:test="${getIsFeaturedAdToday(currentPost.post_id)}">
+							<td style='width: 50%; margin-left:65px; padding-left:68px;'><i class="icon-phone-sign icon-small"></i>
+								&nbsp;${currentPost.phoneForContact}
+							</td>
+						</t:If>
+					</tr>
+				</table>
+			</td>
+			
+			<t:If t:test="${getIsFeaturedAdToday(currentPost.post_id)}">
+				
+				<td style='width: 65px;'>
+					<a  t:type="PageLink" t:page="view/Post"
+								context="currentPost.post_id" target="_blank">		
+					<img style="height: 50px; width: 50px; padding-right:10px" alt="" src="${getFireImage()}"/>
+					</a>
+				</td>
+				
+				<td style='width: 65px;'>
+					<a  t:type="PageLink" t:page="view/Post" context="currentPost.post_id" target="_blank">		
+					<img style="height: 60px; width: 60px;" class="img-rounded"
+						src="${getPostsSecondImage()}"
+						alt="" />
+					</a>
+				</td>
+			</t:If>
+		</tr>
+	</table>
+</div>
+
+<t:If t:test="${getHasPages()}">
+	<div class='pagination' style='margin:0px'>
+		<ul class="" id="yw0"><li class="first hidden"></li>
+			<li class="previous hidden"></li>
+			
+			<li t:type="Loop" t:source="${getAllPageNumbers()}" t:value="loopPageNumber" class="${getClassForPage(loopPageNumber)}">
+				<a t:type="ActionLink" t:id="pageNavigation" context="${loopPageNumber}">${loopPageNumber}</a>
+			</li>
+			
+			<li class="next">
+				<a  t:type="ActionLink" t:id="pageNavigationNext">${message:next}</a>
+			</li>
+		</ul>
+	</div>
+</t:If>
+</html>

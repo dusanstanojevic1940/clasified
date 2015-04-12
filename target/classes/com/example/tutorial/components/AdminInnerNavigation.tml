@@ -1,0 +1,31 @@
+<t:container
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+	<div class="navbar">
+
+		<div class="navbar-inner">
+			<ul class="nav pull-left">
+
+				<li class="${getClass('admin')}"><t:PageLink
+						t:page="admin/main">Admin main</t:PageLink></li>
+				<li class="${getClass('users')}"><t:PageLink
+						t:page="admin/view/users">Users</t:PageLink></li>
+				<li class="${getClass('posts')}"><t:PageLink
+						t:page="admin/view/posts">Posts</t:PageLink></li>
+				<li class="${getClass('subcategories')}"><t:PageLink
+						t:page="admin/view/subcategories">Subcategories</t:PageLink></li>
+				<li class="${getClass('categories')}"><t:PageLink
+						t:page="admin/view/categories">Categories</t:PageLink></li>
+				<li class="${getClass('globalSettings')}"><t:PageLink
+						t:page="admin/view/EditGlobalSettings">Global Settings</t:PageLink></li>
+						
+						
+				<li class="${getClass('data')}"><t:PageLink
+						t:page="admin/view/Data">Data</t:PageLink></li>
+				
+				<li class="${getClass('store')}"><t:PageLink
+						t:page="admin/view/store/Account">Store</t:PageLink></li>
+			</ul>
+		</div>
+	</div>
+</t:container>

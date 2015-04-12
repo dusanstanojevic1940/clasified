@@ -1,0 +1,26 @@
+<html t:type="layout" title="Admin Subcategories"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:AdminInnerNavigation t:selected="${'subcategories'}"></t:AdminInnerNavigation>
+<form t:type="Form" t:id="registerForm" method="POST">
+	<input t:type="textfield" t:id="search"  style="margin-right: 10px; margin-top: 9px;"/>
+	<input type="submit" class="btn"  t:type="Submit" value="Search"/>
+</form>
+
+<t:grid source="subcategories" row="subcategory" add="[delete, edit]">
+	<p:deleteCell>
+		<t:PageLink t:page="admin/delete/Subcategory" context="subcategory.id">Delete</t:PageLink>
+	</p:deleteCell>
+	<p:editCell>
+		<t:PageLink t:page="admin/edit/Subcategory" context="subcategory.id">Edit</t:PageLink>
+	</p:editCell>
+</t:grid>
+<t:PageLink t:page="admin/create/subcategory">+Add a subcategory</t:PageLink>
+<br/>
+<br/>
+<t:Form target="_blank" t:id="downloadForm" style="clear:both;">
+	<input t:type="Submit" class="btn" value="Download .csv"/>	
+</t:Form>
+
+</html>

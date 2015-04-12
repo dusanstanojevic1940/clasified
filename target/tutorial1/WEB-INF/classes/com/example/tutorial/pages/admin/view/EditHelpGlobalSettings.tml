@@ -1,0 +1,138 @@
+<html t:type="Layout" t:title="Edit Global Settings" t:id="layout"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+<t:AdminInnerNavigation t:selected="${'globalSettings'}"></t:AdminInnerNavigation>
+<t:GlobalSettingsInnerNavigation style="margin-top:-20px;"
+	t:selected="${'Help'}"></t:GlobalSettingsInnerNavigation>
+
+<t:beaneditform object="settings" reorder="helpTitle,helpText"
+	submitLabel="Save">
+
+	<p:helpText>
+		<t:label for="helpText" />
+		<br />
+		<t:TextArea t:mixins="TinyMCE" style="max-width:120px;"
+			t:id="helpText" value="settings.helpText" />
+	</p:helpText>
+
+
+
+	<p:showCaptchaOnUserRegistration>
+		<t:hidden value="settings.showCaptchaOnUserRegistration" />
+	</p:showCaptchaOnUserRegistration>
+	<p:showCaptchaOnPostAds>
+		<t:hidden value="settings.showCaptchaOnPostAds" />
+	</p:showCaptchaOnPostAds>
+	<p:showCaptchaOnBumpPost>
+		<t:hidden value="settings.showCaptchaOnBumpPost" />
+	</p:showCaptchaOnBumpPost>
+	<p:allowVideoOnPost>
+		<t:hidden value="settings.allowVideoOnPost" />
+	</p:allowVideoOnPost>
+	<p:allowPicturesOnPost>
+		<t:hidden value="settings.allowPicturesOnPost" />
+	</p:allowPicturesOnPost>
+	<p:picturesPerPost>
+		<t:hidden value="settings.picturesPerPost" />
+	</p:picturesPerPost>
+	<p:websiteTitle>
+		<t:hidden value="settings.websiteTitle" />
+	</p:websiteTitle>
+
+	<p:mainHeaderTitle>
+		<t:hidden value="settings.mainHeaderTitle" />
+	</p:mainHeaderTitle>
+	<p:email>
+		<t:hidden value="settings.email" />
+	</p:email>
+	<p:paypalEmail>
+		<t:hidden value="settings.paypalEmail" />
+	</p:paypalEmail>
+
+
+
+
+
+
+	<p:imageOnWebsiteURL>
+		<t:hidden value="settings.imageOnWebsiteURL" />
+	</p:imageOnWebsiteURL>
+	<p:imageURL>
+		<t:hidden value="settings.imageURL" />
+	</p:imageURL>
+	<p:messageOn>
+		<t:hidden value="settings.messageOn"/>
+	</p:messageOn>
+	<p:messageText>
+		<t:hidden value="settings.messageText"/>
+	</p:messageText>
+	<p:offeringWanted>
+		<t:hidden value="settings.offeringWanted"/>
+	</p:offeringWanted>
+	
+	<p:postsPerPage>
+		<t:hidden value="settings.postsPerPage"/>
+	</p:postsPerPage>
+	
+	<p:priceFeaturedAdCoinsPerDay>
+		<t:hidden value="settings.priceFeaturedAdCoinsPerDay"/>
+	</p:priceFeaturedAdCoinsPerDay>
+	
+	<p:priceTopAdCoinsPerDay>
+		<t:hidden value="settings.priceTopAdCoinsPerDay"/>
+	</p:priceTopAdCoinsPerDay>
+	<p:showLocationOnPostAds>
+		<t:hidden value="settings.showLocationOnPostAds"/>
+	</p:showLocationOnPostAds>
+	<p:singleCategoryHome>
+		<t:hidden value="settings.singleCategoryHome"/>
+	</p:singleCategoryHome>
+	
+	<p:singleCategoryURL>
+		<t:hidden value="settings.singleCategoryURL"/>
+	</p:singleCategoryURL>
+	
+	<p:topCodeOn>
+		<t:hidden value="settings.topCodeOn"/>
+	</p:topCodeOn>
+	<p:topCodeText>
+		<t:hidden value="settings.topCodeText"/>
+	</p:topCodeText>
+
+
+
+	<p:bottomCodeOn>
+		<t:hidden value="settings.bottomCodeOn" />
+	</p:bottomCodeOn>
+	<p:bottomCodeText>
+		<t:hidden value="settings.bottomCodeText" />
+	</p:bottomCodeText>
+	<p:showIP>
+		<t:hidden value="settings.showIP" />
+	</p:showIP>
+
+
+
+
+	<p:termsAndConditionsTitle>
+		<t:hidden value="settings.termsAndConditionsTitle " />
+	</p:termsAndConditionsTitle>
+	<p:termsAndConditionsSubtitle>
+		<t:hidden value="settings.termsAndConditionsSubtitle" />
+	</p:termsAndConditionsSubtitle>
+	<p:termsAndConditionsWarnning>
+		<t:hidden value="settings.termsAndConditionsWarnning" />
+	</p:termsAndConditionsWarnning>
+	<p:termsAndConditionsFacts>
+		<t:hidden value="settings.termsAndConditionsFacts" />
+	</p:termsAndConditionsFacts>
+	<p:termsAndConditionsLiabilityHeader>
+		<t:hidden value="settings.termsAndConditionsLiabilityHeader" />
+	</p:termsAndConditionsLiabilityHeader>
+	<p:termsAndConditionsLiabilityFacts>
+		<t:hidden value="settings.termsAndConditionsLiabilityFacts" />
+	</p:termsAndConditionsLiabilityFacts>
+
+</t:beaneditform>
+
+</html>

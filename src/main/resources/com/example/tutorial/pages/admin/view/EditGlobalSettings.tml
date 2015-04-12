@@ -1,0 +1,74 @@
+<html t:type="Layout" t:title="Edit Global Settings" t:id="layout"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+<t:AdminInnerNavigation t:selected="${'globalSettings'}"></t:AdminInnerNavigation>
+<t:GlobalSettingsInnerNavigation style="margin-top:-20px;"
+	t:selected="${'Global'}"></t:GlobalSettingsInnerNavigation>
+
+<t:beaneditform object="settings"
+	reorder="websiteTitle,mainHeaderTitle,email,paypalEmail,allowPicturesOnPost,picturesPerPost"
+	submitLabel="Save">
+
+	<!--
+		<p:helpText> 
+		  	<t:label for="helpText"/> 
+		  	<br/>
+		  	<t:TextArea t:mixins="TinyMCE" style="max-width:120px;" t:id="helpText" value="settings.helpText"/> 
+		</p:helpText> -->
+
+	<p:helpTitle>
+		<t:hidden value="settings.helpTitle" />
+	</p:helpTitle>
+	<p:helpText>
+		<t:hidden value="settings.helpText" />
+	</p:helpText>
+
+	<p:singleCategoryHome>
+		<t:Hidden t:value="settings.singleCategoryHome"/>
+	</p:singleCategoryHome>
+	
+	<p:singleCategoryURL>
+		<t:Hidden t:value="settings.singleCategoryURL"/>
+	</p:singleCategoryURL>
+	
+	
+	<p:termsAndConditionsTitle>
+		<t:hidden value="settings.termsAndConditionsTitle " />
+	</p:termsAndConditionsTitle>
+	<p:termsAndConditionsSubtitle>
+		<t:hidden value="settings.termsAndConditionsSubtitle" />
+	</p:termsAndConditionsSubtitle>
+	<p:termsAndConditionsWarnning>
+		<t:hidden value="settings.termsAndConditionsWarnning" />
+	</p:termsAndConditionsWarnning>
+	<p:termsAndConditionsFacts>
+		<t:hidden value="settings.termsAndConditionsFacts" />
+	</p:termsAndConditionsFacts>
+	<p:termsAndConditionsLiabilityHeader>
+		<t:hidden value="settings.termsAndConditionsLiabilityHeader" />
+	</p:termsAndConditionsLiabilityHeader>
+	<p:termsAndConditionsLiabilityFacts>
+		<t:hidden value="settings.termsAndConditionsLiabilityFacts" />
+	</p:termsAndConditionsLiabilityFacts>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<p:messageText>
+		<t:label for="messageText" />
+		<br />
+		<t:TextArea t:id="messageText" value="settings.messageText" />
+	</p:messageText>
+	
+
+</t:beaneditform>
+
+
+</html>

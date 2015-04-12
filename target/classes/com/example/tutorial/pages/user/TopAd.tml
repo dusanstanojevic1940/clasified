@@ -1,0 +1,42 @@
+<html t:type="layout" title="Bump Post"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:j="tapestry-library:jquery">	
+		
+	
+	<form t:type="form" t:id="topForm">
+		<div class="error-test"><t:Errors /></div>
+		<p>${message:wouldyou}</p>
+		<p>(${pricePerDay} ${message:perday})</p>
+		<select name="os0" t:type="Select" t:model="days" t:blankOption="NEVER" t:id="currentDay"  size="1" />
+		<br/>
+		<br/>
+		<input type='submit' class='btn' value='Submit' />
+	</form>
+	<br/><br/>	
+	
+	<div class=''>
+		<h4>${message:main}</h4>
+		<p>${message:submain}</p>
+		<form t:type="Form" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+			target="_top" t:id="botForm">
+			<input type="hidden" name="cmd" value="_s-xclick" /> <input
+				type="hidden" name="hosted_button_id" value="V9YQ5C9HRNXPG" /><input
+				type="hidden" name="custom" value="ads711.com:12463" />
+						<input type="hidden" name="on0" value="Buy Gold Coins" />${message:buycoins}<br/><br/>
+				
+						<select name="os0" t:type="Select" t:model="sellingItems" t:blankOption="NEVER" t:id="sellingItem"  size="1" />
+						<br/><br/>
+					
+			<input type="hidden" name="currency_code" value="SGD" /> <input
+				type="image"
+				src="https://www.paypalobjects.com/en_GB/SG/i/btn/btn_buynowCC_LG.gif"
+				border="0" name="submit"
+				alt="PayPal – The safer, easier way to pay online." /> 
+				<img alt=""
+				border="0"
+				src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif"
+				width="1" height="1" />
+		</form>
+
+	</div>
+</html>

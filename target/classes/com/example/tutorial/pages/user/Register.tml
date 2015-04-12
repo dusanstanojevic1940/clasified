@@ -1,0 +1,47 @@
+<html t:type="layout" title="Register"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	selected="register">
+
+<div class='box'>
+	<h3>${message:main}</h3>
+	<form t:type="form" class="full-form" t:id="registerForm"
+		data-ajax="false" method="post">
+		<div class="error-test"><t:Errors /></div>
+		<label for="Member_username" class="required">${message:username}<span
+			class="required">*</span></label>
+		<div class="input-prepend">
+			<span class="add-on"><i class='icon-user'></i> </span> <input
+				t:type="textfield" t:id="username" name="Member[username]"
+				id="Member_username" type="text" maxlength="20" />
+		</div>
+
+		<label for="Member_pass" class="required">${message:pass}<span
+			class="required">*</span></label>
+		<div class="input-prepend">
+			<span class="add-on"><i class='icon-asterisk'></i> </span> <input
+				t:type="passwordField" t:id="password" name="Member[pass]"
+				id="Member_pass" type="text" maxlength="20" />
+		</div>
+
+		<label for="Member_email" class="required">${message:email} <span
+			class="required">*</span></label>
+		<div class="input-prepend">
+			<span class="add-on"><i class='icon-envelope'></i> </span> <input
+				t:type="textfield" t:id="email" name="Member[email]"
+				id="Member_email" type="text" />
+		</div>
+		<br />
+		<t:If t:test="showCaptcha">
+			<div t:type="KaptchaField" t:visible="true" image="kaptcha" t:id="fcaptcha" />
+			<br />
+			<div t:type="KaptchaImage" t:id="kaptcha" />
+		</t:If>
+		<br /> <br /> <input type='submit' class='btn' value='${message:submit}' />
+
+
+	</form>
+	<hr />
+	<t:PageLink t:page="user/SignIn">${message:signin}</t:PageLink>
+</div>
+
+</html>

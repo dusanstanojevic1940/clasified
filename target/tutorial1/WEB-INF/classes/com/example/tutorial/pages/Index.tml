@@ -1,0 +1,51 @@
+<html t:type="layout" title="${title}"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	>
+
+<!-- 
+<t:PageLink t:page="admin/main">Adming page</t:PageLink>
+<br/>
+<t:PageLink t:page="user/myads">MyAds</t:PageLink>
+<br/>
+<t:PageLink t:page="user/myprofile">MyProfile</t:PageLink>
+<br/>
+<t:PageLink t:page="user/mywatchlist">MyWatchlist</t:PageLink>
+<br/>
+<t:PageLink t:page="user/register">Register</t:PageLink>
+-->
+
+
+<div class="navbar">
+	<div class="navbar-inner">
+		<t:PageLink t:page="Index" class="brand hidden-phone">${mainHeaderTitle}</t:PageLink>
+		<div style='margin-top: 10px; display: inline-block'></div>
+		<div class="nav pull-right">
+			<a t:type="PageLink" t:page="add/ChooseCategory"
+				class="btn btn-success"><i class='icon-edit'></i> ${message:greeting}</a>
+		</div>
+	</div>
+</div>
+
+<div class='categories' t:type="loop" source="categories"
+	value="category">
+	<div class='category-group'>
+		<div>
+			<span class="main_link">${category.name} </span>
+		</div>
+		<t:Loop source="currentSubcategories" value="subcategory">
+			<a t:type="PageLink" t:page="view/Subcategory"
+				context="subcategory.id" target="_blank" class="home_link">${subcategory.name}</a>
+		</t:Loop>
+		<hr style='width: 80%; margin: 8px 0' />
+	</div>
+</div>
+
+<script>
+		var container = $('.categories');
+		container.masonry({
+		itemSelector : '.category-group',
+		columnWidth : 300
+		});
+	</script>
+
+</html>

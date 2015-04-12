@@ -1,0 +1,69 @@
+<html t:type="Layout" t:title="My Watchlist" t:id="layout"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter"
+	selected="myWatchlist">
+
+<div class="navbar">
+	<div class="navbar-inner">
+		<a t:type="PageLink" t:page="user/MyWatchlist" class="brand">${message:watchlist}</a>
+	</div>
+</div>
+<t:if test="${!getNoAds()}">
+	<div t:type="Loop" t:source="postsToShow" value="post" style='padding: 10px; border: 1px solid #eee; margin-bottom: 20px;'>
+		<div class='listCell'>
+			<table style='margin: 0; width: 100%'>
+				<tr>
+					<td style='width: 65px;'><a t:type="PageLink" t:page="view/Post" context="post.post_id"
+						target="_blank" href="/info/view/id/110525"><img
+							style="height: 60px; width: 60px;" class="img-rounded"
+							src="${getPostsImage(post.post_id)}"
+							alt="Bus Driver Wanted" /></a></td>
+					<td>
+						<table class='attributes'>
+							<tr>
+								<td colspan='3'><a t:type="PageLink" t:page="view/Post"
+									context="post.post_id" target="_blank" class="title">${post.title}</a></td>
+							</tr>
+							<tr>
+								<td style='width: 50%'><i class="icon-calendar icon-small"></i>
+									${timeSincePosted}</td>
+								<td style='width: 50%'><i class="icon-phone-sign icon-small"></i>
+									&nbsp;${post.phoneForContact}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<a t:type="ActionLink" context="post.post_id" t:page="user/MyWatchlist" class='btn red'>${message:delete}</a>
+	</div>
+	
+	<t:If t:test="${getHasPages()}">
+		<div class='pagination' style='margin:0px'>
+			<ul class="" id="yw0"><li class="first hidden"></li>
+				<li class="previous hidden"></li>
+				
+				<li t:type="Loop" t:source="${getAllPageNumbers()}" t:value="loopPageNumber" class="${getClassForPage(loopPageNumber)}">
+					<a t:type="ActionLink" t:id="pageNavigation" context="${loopPageNumber}">${loopPageNumber}</a>
+				</li>
+				
+				<li class="next">
+					<a  t:type="ActionLink" t:id="pageNavigationNext">${message:next}</a>
+				</li>
+			</ul>
+		</div>
+	</t:If>
+</t:if>
+
+
+<t:if test="${getNoAds()}">
+	<div class="hero-unit">
+		<p>
+			${message:noads}</p>
+		<p>
+			<t:PageLink t:page="add/ChooseCategory" class="btn btn-primary" style="margin-right:7px;">${message:cc}</t:PageLink>
+			<t:PageLink t:page="Index" class="btn btn-primary">${message:index}</t:PageLink>	</p>
+	</div>
+</t:if>
+</html>

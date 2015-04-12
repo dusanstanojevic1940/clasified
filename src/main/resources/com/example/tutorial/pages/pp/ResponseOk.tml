@@ -1,0 +1,21 @@
+<html t:type="layout" title="My Profile"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+	<div class='div-plain-inner hero-unit'>
+		<h3>Welcome Back!</h3>
+		
+		<p>
+			Thank you for making a purchase.
+				
+			Your purchase has been approved.
+		</p>
+		
+		<p>
+			Enjoy your Top Ads.	
+		</p>
+		
+		<a t:type="PageLink" t:page="Index" class="btn btn-primary" >Back to Homepage</a>	
+		<a t:type="PageLink" t:page="Help" class="btn btn-primary" >Help</a>
+	</div>
+
+</html>
