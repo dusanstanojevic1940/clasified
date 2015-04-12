@@ -35,3 +35,7 @@ Admin takodje moze da bira koje je sve podatke moguce dodati prilikom ubacivanja
 -Korisnici mogu da dodaju reklame u Watchlist<br />
 -Admin moze da skida MySQL dump baze po potrebi<br />
 -Admin moze da bira mesto za cuvanje slika i prikazivanje slika<br />
+-Admin moze da eksportuje sve tabele iz admin panel-a u .csv formatu<br />
+
+https://www.dropbox.com/s/on8jg55zqvhn60b/ROOT.war?dl=0
+https://www.dropbox.com/s/lirnbi2uombryhh/Clasified%20Images.zip?dl=0
