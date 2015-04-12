@@ -41,7 +41,7 @@ public class CleanUpAndSaveServiceImpl implements CleanUpAndSaveService {
 	public InputStream save() {
 		String dbName = "clasified_production";
         String dbUser = "root";
-        String dbPass = "sxihifdueccn";
+        String dbPass = "root";
         try {
             String executeCmd = "";
             executeCmd = "/usr/bin/mysqldump -u " + dbUser + " -p" + dbPass + " " + dbName;
