@@ -26,11 +26,12 @@ Admin takodje moze da bira koje je sve podatke moguce dodati prilikom ubacivanja
 
 #Dodatne Opcije
 
--Reklame pamte IP adresu osobe koja ih je dodala./n
--Reklame mogu da imaju slike./n
--Reklame mogu da imaju video klipove./n
--Korisnici mogu da edituju profil
--Korisnici mogu da Bump-uju svoju reklamu na vrh liste
--Korisnici mogu da plate za dodatne opcije reklama (TopAd i FeaturedAd)
--Korisnici mogu da dodaju reklame u Watchlist
--Admin moze da skida MySQL dump baze po potrebi
+-Reklame pamte IP adresu osobe koja ih je dodala.<br />
+-Reklame mogu da imaju slike.<br />
+-Reklame mogu da imaju video klipove.<br />
+-Korisnici mogu da edituju profil<br />
+-Korisnici mogu da Bump-uju svoju reklamu na vrh liste<br />
+-Korisnici mogu da plate za dodatne opcije reklama (TopAd i FeaturedAd)<br />
+-Korisnici mogu da dodaju reklame u Watchlist<br />
+-Admin moze da skida MySQL dump baze po potrebi<br />
+-Admin moze da bira mesto za cuvanje slika i prikazivanje slika<br />
