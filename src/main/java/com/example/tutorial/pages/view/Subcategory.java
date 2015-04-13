@@ -68,8 +68,11 @@ public class Subcategory {
 		toBePassedIn = id;
 	}
 	
+	String videoimg;
+	
 	Object onActivate(Long id) {
 		fimg = request.getContextPath()+"/layout/images/fire1.png";
+		videoimg = request.getContextPath()+"/layout/images/video_image.png";
 		
 		this.toBePassedIn = id;
 		this.subcategory = subcategoryDAO.getByID(toBePassedIn);
@@ -256,6 +259,10 @@ public class Subcategory {
 		return false;
 	}
 	
+	public boolean getHasVideo(Post post) {
+		return settingsDAO.getSettings().allowVideoOnPost && post.videoLink!=null && !post.videoLink.equals("");
+	}
+	
 	public boolean getIsFeaturedAdToday(long id) {
 		List<FeaturedAdOn> dates = postDAO.getFeaturedOnByPostID(id);
 		
@@ -290,6 +297,10 @@ public class Subcategory {
 	
 	public String getFireImage() {
 		return fimg;
+	}
+	
+	public String getVideoImage() {
+		return videoimg;
 	}
 	
 	public String getPostsSecondImage() {

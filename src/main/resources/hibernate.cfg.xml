@@ -11,8 +11,9 @@
 	   	<property name="hibernate.connection.url">jdbc:mysql://localhost/clasified_production?autoReconnect=true&amp;useUnicode=true&amp;createDatabaseIfNotExist=true&amp;characterEncoding=utf-8</property>
 	   
 	   	<property name="hibernate.connection.username">root</property>
-	   	<property name="hibernate.connection.password">root</property>
-		<!-- <property name="hibernate.connection.password">root123</property>-->
+	   	<!-- <property name="hibernate.connection.password">root</property> -->
+	   	<!-- <property name="hibernate.connection.password">sxihifdueccn</property>-->
+		<property name="hibernate.connection.password">root123</property>
 	
 		<property name="hibernate.connection.useUnicode">true</property>
 		<property name="hibernate.connection.characterEncoding">UTF-8</property>

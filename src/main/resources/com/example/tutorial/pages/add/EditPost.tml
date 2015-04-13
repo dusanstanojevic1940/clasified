@@ -19,7 +19,7 @@
 			<td>
 				<div>
 					<input t:type="textfield" t:id="title"
-						style="width: 98%; padding: 4px" placeholder="标题"
+						style="width: 98%; padding: 4px" placeholder="${message:title}"
 						maxlength="120" name="Info[title]" id="Info_title" type="text" />
 				</div>
 			</td>
@@ -43,7 +43,7 @@
 
 		<tr>
 			<th><label for="Info_price">${message:price}</label></th>
-			<td><input t:type="textfield" t:id="price" placeholder="价格"
+			<td><input t:type="textfield" t:id="price" placeholder="${message:price}"
 				name="Info[price]" id="Info_price" type="text" /></td>
 		</tr>
 
@@ -60,7 +60,7 @@
 			
 			<t:If t:test="showUploadButton">
 				<tr>
-					<th>图片</th>
+					<th>${message:imageup}</th>
 					<td>
 						<j:ajaxUpload t:id="uploadImage" t:multiple="false" t:allowedExtensions="[jpg, png, gif]" t:sizeLimit="5M">
 							<noscript>
@@ -81,7 +81,7 @@
 		<tr>
 			<th><label for="Info_phone">${message:phone}</label></th>
 			<td><input t:type="textfield" t:id="phone" size="20"
-				maxlength="20" placeholder="电话" name="Info[phone]"
+				maxlength="20" placeholder="${message:phone}" name="Info[phone]"
 				id="Info_phone" type="text" /></td>
 		</tr>
 
@@ -89,7 +89,7 @@
 		<t:If t:test="videoOnPost">
 			<tr>
 				<th><label for="Info_area_id">${message:youtubevid}</label></th>
-				<td><input t:type="textfield" t:id="videoLink"
+				<td><input t:type="textfield" t:id="videoLink" placeholder="${message:youtubevid}"
 					name="Info[area_id]" id="Info_area_id" /></td>
 			</tr>
 		</t:If>
@@ -99,7 +99,7 @@
 			<th></th>
 			<td>
 				<div data-role="controlgroup" data-type="horizontal">
-					<input type='submit' value='提交'
+					<input type='submit' value='${message:submit}'
 						class='btn btn-primary btn-large' />
 				</div>
 			</td>

@@ -25,21 +25,21 @@
 		</div>
 	</div>
 </div>
-
-<div class='categories' t:type="loop" source="categories"
-	value="category">
-	<div class='category-group'>
-		<div>
-			<span class="main_link">${category.name} </span>
+<div class='categories'>
+	<div t:type="loop" source="categories"
+		value="category">
+		<div class='category-group'>
+			<div>
+				<span class="main_link">${category.name} </span>
+			</div>
+			<t:Loop source="currentSubcategories" value="subcategory">
+				<a t:type="PageLink" t:page="view/Subcategory"
+					context="subcategory.id" target="_blank" class="home_link">${subcategory.name}</a>
+			</t:Loop>
+			<hr style='width: 80%; margin: 8px 0' />
 		</div>
-		<t:Loop source="currentSubcategories" value="subcategory">
-			<a t:type="PageLink" t:page="view/Subcategory"
-				context="subcategory.id" target="_blank" class="home_link">${subcategory.name}</a>
-		</t:Loop>
-		<hr style='width: 80%; margin: 8px 0' />
 	</div>
 </div>
-
 <script>
 		var container = $('.categories');
 		container.masonry({
@@ -47,5 +47,5 @@
 		columnWidth : 300
 		});
 	</script>
-
+	<script type="text/javascript" src="http://cdn.example8.com/get.php?files=uservoice.js,jianfan.js,jquery.cookie.js,jquery.masonry.min.js"></script>
 </html>

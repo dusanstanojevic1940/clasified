@@ -75,6 +75,15 @@
 				</table>
 			</td>
 			
+			<t:If t:test="${getHasVideo(currentPost)}">
+				<td style='width: 65px;'>
+					<a  t:type="PageLink" t:page="view/Post"
+								context="currentPost.post_id" target="_blank">		
+					<img style="height: 50px; width: 50px; padding-right:10px" alt="" src="${getVideoImage()}"/>
+					</a>
+				</td>
+			</t:If>
+			
 			<t:If t:test="${getIsFeaturedAdToday(currentPost.post_id)}">
 				
 				<td style='width: 65px;'>
